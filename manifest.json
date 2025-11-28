@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "HerShield",
+  "version": "1.0",
+  "description": "Detects and filters abusive comments to protect users online.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
